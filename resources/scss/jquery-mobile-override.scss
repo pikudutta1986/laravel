@@ -1,0 +1,41 @@
+// DROPDOWN OVERRIDE
+.ui-select{
+    .ui-btn{
+        padding: 0;
+    }
+}
+
+// BUTTON OVERRIDE
+.ui-input-btn input{
+    background: $secondary-button-bg-color !important;
+    color: $button-text-color !important;
+    font-weight: $font-weight !important;
+    font-size: $button-font-size !important;
+    opacity: 1 !important;
+    text-indent: 1px !important;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+// RANGE SLIDER OVERRIDE
+.ui-slider-track .ui-btn.ui-slider-handle {
+    margin: -13px 0 0 -15px !important;
+}
+input.ui-slider-input{
+    font-size: 12px !important;
+    width: 42px;
+}
+
+// LINE HEIGHT OVERRIDE
+input, select, textarea, button, .ui-btn{
+    line-height: 1 !important;
+}
+
+
+.ui-btn-icon-left:after, .ui-btn-icon-right:after, .ui-btn-icon-top:after, .ui-btn-icon-bottom:after, .ui-btn-icon-notext:after{
+    background-color: $ui-widget-color !important;
+}
+
+button.ui-btn, .ui-controlgroup-controls button.ui-btn-icon-notext{
+    width: auto !important;
+}
