@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 // MANUALLY ADDED CONTROLLERS
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\Auth\LoginRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +15,6 @@ use App\Http\Controllers\CarController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 // HOME PAGE.
 Route::get('/', [CarController::class, 'homePageCars']);
 
@@ -47,6 +46,14 @@ Route::get('/login', function () {
 // REGISTRATION PAGE.
 Route::get('/register', function () {
     return view('register');
+});
+
+Route::controller(LoginRegisterController::class)->group(function() {
+    Route::get('/register', 'register')->name('register');;
+    Route::get('/login', 'login')->name('login');
+    Route::post('/authenticate', 'authenticate')->name('authenticate');
+    Route::get('/dashboard', 'dashboard')->name('dashboard');
+    Route::post('/logout', 'logout')->name('logout');
 });
 
 
