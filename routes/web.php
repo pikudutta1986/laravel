@@ -30,10 +30,24 @@ Route::get('/dealers', function () {
 });
 
 // ADD VEHICLE PAGE.
-Route::get('/add-vehicle', function () {
+Route::get('/sell-my-car', function () {
     return view('add-vehicle');
 });
 
+// VEHICLE DETAILS PAGE.
+Route::get('/car/{vin}', function () {
+    return view('vehicle-details');
+});
+
+// LOGIN PAGE.
+Route::get('/login', function () {
+    return view('login');
+});
+
+// REGISTRATION PAGE.
+Route::get('/register', function () {
+    return view('register');
+});
 
 
 // Route::any('{slug}', function () {

@@ -14,8 +14,13 @@ class Car extends Model
         return $collection->toArray();
     }
 
-    public function ListingPageCars() {
+    public function ListingPage4ColumnCars() {
         $collection = DB::table('cars')->orderBy('year', 'ASC')->limit(20)->get();
+        return $collection->toArray();
+    }
+
+    public function ListingPage3ColumnCars() {
+        $collection = DB::table('cars')->orderBy('year', 'ASC')->limit(21)->get();
         return $collection->toArray();
     }
 }

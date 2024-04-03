@@ -36,8 +36,8 @@
                     (555) 555-5555
                 </div>
                 <div class="col-md-6 text-right">
-                    <a class="link-white" href="/dealer-signup">Dealer Signup</a>
-                    <a class="link-white" href="/dealer-signup">Dealer Login</a>
+                    <a class="link-white" href="/register">Dealer Signup</a>
+                    <a class="link-white" href="/login">Dealer Login</a>
                 </div>
             </div>
         </div>

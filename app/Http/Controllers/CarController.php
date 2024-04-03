@@ -32,7 +32,7 @@ class CarController extends Controller
         $car = new Car();
 
         // GET THE CARS.
-        $carList = $car->ListingPageCars();
+        $carList = $car->ListingPage4ColumnCars();
 
         // LOAD THE VIEW WITH DATA.
         return view('vehicles', [
@@ -47,7 +47,7 @@ class CarController extends Controller
         $car = new Car();
 
         // GET THE CARS.
-        $carList = $car->ListingPageCars();
+        $carList = $car->ListingPage3ColumnCars();
 
         // LOAD THE VIEW WITH DATA.
         return view('vehicles-left-sidebar', [
@@ -62,7 +62,7 @@ class CarController extends Controller
         $car = new Car();
 
         // GET THE CARS.
-        $carList = $car->ListingPageCars();
+        $carList = $car->ListingPage3ColumnCars();
 
         // LOAD THE VIEW WITH DATA.
         return view('vehicles-right-sidebar', [

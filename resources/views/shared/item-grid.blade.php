@@ -4,7 +4,7 @@
             @if ($car->images != "")
                 @foreach(explode('|', $car->images) as $image) 
                 <div class="item">
-                    <img src="{{$image}}" />
+                    <a href="/car/{{$car->vin}}"><img src="{{$image}}" /></a>
                 </div>
                 @endforeach
             @endif
@@ -12,7 +12,7 @@
         <div class="price">${{number_format($car->price)}}</div>
     </div>
     <div class="content">
-        <h2>{{$car->year}} {{$car->make}} {{$car->model}}</h2>
+        <h2><a href="/car/{{$car->vin}}">{{$car->year}} {{$car->make}} {{$car->model}}</a></h2>
         <p><img class="feature-icon" src="/images/engine.svg" /> {{$car->engine}}</p>
         <p><img class="feature-icon" src="/images/fueltype.svg" /> {{$car->fueltype}}</p>
         <p><img class="feature-icon" src="/images/transmission.svg" /> {{($car->transmission) ? $car->transmission : 'Not available'}}</p>

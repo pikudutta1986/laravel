@@ -1,6 +1,6 @@
 @include('shared/header')
 <div class="container">
-    <h1 class="page-title">Sell my car</h1>
+    <h1 class="page-title">Create your dealer account</h1>
     <div class="row">
        
     </div>
