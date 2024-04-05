@@ -38,15 +38,6 @@ Route::get('/car/{vin}', function () {
     return view('vehicle-details');
 });
 
-// LOGIN PAGE.
-Route::get('/login', function () {
-    return view('login');
-});
-
-// REGISTRATION PAGE.
-Route::get('/register', function () {
-    return view('register');
-});
 
 Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/register', 'register')->name('register');;
@@ -54,6 +45,7 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::post('/authenticate', 'authenticate')->name('authenticate');
     Route::get('/dashboard', 'dashboard')->name('dashboard');
     Route::post('/logout', 'logout')->name('logout');
+    Route::post('/store', 'store')->name('store');
 });
 
 

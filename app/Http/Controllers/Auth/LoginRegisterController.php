@@ -47,14 +47,17 @@ class LoginRegisterController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
+			'role' => 'Admin',
             'password' => Hash::make($request->password)
         ]);
 
         $credentials = $request->only('email', 'password');
+		
         Auth::attempt($credentials);
+		
         $request->session()->regenerate();
-        return redirect()->route('dashboard')
-        ->withSuccess('You have successfully registered & logged in!');
+		
+        return route('dashboard');
     }
 
     /**
@@ -83,8 +86,7 @@ class LoginRegisterController extends Controller
         if(Auth::attempt($credentials))
         {
             $request->session()->regenerate();
-            return redirect()->route('dashboard')
-                ->withSuccess('You have successfully logged in!');
+            return route('dashboard');
         }
 
         return back()->withErrors([
@@ -105,10 +107,7 @@ class LoginRegisterController extends Controller
             return view('dashboard');
         }
         
-        return redirect()->route('login')
-            ->withErrors([
-            'email' => 'Please login to access the dashboard.',
-        ])->onlyInput('email');
+        return route('login');
     } 
     
     /**
@@ -122,8 +121,7 @@ class LoginRegisterController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('login')
-            ->withSuccess('You have logged out successfully!');;
+        return route('login');
     }    
 
 }
