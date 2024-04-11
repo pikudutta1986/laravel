@@ -47,7 +47,7 @@ class LoginRegisterController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-			'role' => 'Admin',
+			'role' => 'Dealer',
             'password' => Hash::make($request->password)
         ]);
 
